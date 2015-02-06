@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>yaTimepicker - yet another Timepicker</title>
+    <meta name="author" content="Mads Jakobsen">
+    <link rel="stylesheet" href="css/jQuery.yaTimepicker.css">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <h1>yaTimepicker</h1>
+
+    <p>Yet Another Timepicker - based on jQuery and MomentJS.</p>
+
+    <p><a href="https://github.com/smashdk/yaTimepicker"><strong>yaTimepicker source on GitHub</strong></a></p>
+
+    <label for="timepicker">Time:</label>
+    <br>
+    <input type="text" id="timepicker">
+
+    <h2>What is this?</h2>
+
+    <p>yaTimepicker is simple timepicker based on jQuery and MomentJS. Feel free to use it however you like. Please report any bugs or feature requests to the <a href="https://github.com/smashdk/yaTimepicker/issues">GitHub issue tracker</a>.</p>
+
+    <p class="small">Copyright &copy; 2015 Mads Jakobsen | MIT license</p>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="js/jquery.yaTimepicker.js"></script>
+    <script>
+		$(document).ready(function () {
+			$('#timepicker').yaTimepicker();
+        });
+    </script>
+</body>
+</html>
