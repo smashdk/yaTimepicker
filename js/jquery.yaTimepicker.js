@@ -1,7 +1,7 @@
 ﻿/*!
- * Pikaday jQuery plugin.
+ * yaTimepicker jQuery plugin.
  *
- * Copyright © 2013 David Bushell | BSD & MIT license | https://github.com/dbushell/Pikaday
+ * Copyright © 2015 Mads Jakobsen | MIT license | https://github.com/smashdk/yaTimepicker
  */
 
 (function (root, factory) {
@@ -68,8 +68,8 @@
         if (settings.showCurrentTime) {
             var start = moment();
             var remainder = (5 - start.minute()) % 5;
-            var val = moment(start).add("minutes", remainder).locale(settings.locale).format(format);
-            $(this).val(val);
+            var val = moment(start).add(remainder, "minutes").locale(settings.locale).format(format);
+            $(this).attr('value',val);
         }
         $(this).after(timeDrop);
         $(this).click(function (event) {
