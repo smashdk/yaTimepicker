@@ -56,13 +56,21 @@
       var settings = $.extend({
         locale: 'en',
         alwaysUse24Hours: false,
+        showCurrentTime: true,
       }, options);
 
       return this.each(function () {
+        var format = (settings.alwaysUse24Hours) ? 'HH:mm' : 'LT';
         var timeDrop = $('<div class="yatimedrop"/>');
         var timeDropUl = $('<ul/>');
         timeDropUl.appendTo(timeDrop);
         $(this).addClass("yatimeinput");
+        if (settings.showCurrentTime) {
+            var start = moment();
+            var remainder = (5 - start.minute()) % 5;
+            var val = moment(start).add("minutes", remainder).locale(settings.locale).format(format);
+            $(this).val(val);
+        }
         $(this).after(timeDrop);
         $(this).click(function (event) {
           var d2 = $(this);
